@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+	
+	<title>Contact us - Progressus Bootstrap template</title>
+
+	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
+	
+	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+	<!-- Custom styles for our template -->
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
+	<link rel="stylesheet" href="assets/css/main.css">
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="assets/js/html5shiv.js"></script>
+	<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Button for smallest screens -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+				<a class="navbar-brand" href="没啥用/index.html"><img src="assets/images/jihuatong.png" alt="Progressus HTML5 template"></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right">
+					<li><a href="person_homepage.html">个人主页</a></li>
+					<li><a href="project_homepage.html">项目主页</a></li>
+					<li><a href="member_manage.html">成员管理</a></li>
+					<li><a href="notification_manage.html">通知管理</a></li>
+					<li><a href="send_message.html">通知管理</a></li>
+					<li><a class="btn" href="signin.html">登录/注册/登出</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</div>
+	<!-- /.navbar -->
+
+	<header id="head" class="secondary"></header>
+
+	<!-- container -->
+	<div class="container">
+
+
+				<header class="page-header">
+					<h1 class="page-title">发布消息</h1>
+				</header>
+				
+				<p>
+					你可以在这里发布消息及其deadline，所有加入项目的人都会收到两次通知。
+				</p>
+				<br>
+					<form id="form" method="post" enctype="multipart/form-data">
+						<div class="row">
+							<div class="col-sm-4">
+								<input id="event_title" class="form-control" type="text" placeholder="题目">
+
+							</div>
+							<div class="col-sm-2">
+								<select id="event_type" class="form-control">
+									<option>作业</option>
+									<option>课件</option>
+									<option>通知</option>
+								</select>
+							</div>
+							<div class="col-sm-2">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" id="is_deadline" onclick='check();'>无deadline
+									</label>
+								</div>
+							</div>
+							<div class="col-sm-4" id="selectdate">
+
+
+
+							</div>
+
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-sm-12">
+								<textarea id="event_content" placeholder="输入内容" class="form-control" rows="9"></textarea>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-sm-6 text-left">
+								//
+							</div>
+							<div class="col-sm-6 text-right">
+								<input id="SendMessage" class="btn btn-action" type="submit" value="Send message">
+							</div>
+						</div>
+					</form>
+				<br>
+		<form id="form1" method="post" action="assets/php/upload.php" enctype="multipart/form-data">
+			<input type="file" name="pop_media_put_input" class="pop_media_put_input" multiple="multiple" />
+			<div class="pop_media_put_list">
+			</div>
+			<input id="SendMessage1" class="btn btn-action" type="submit" value="Send message">
+		</form>
+		<br><br><br>
+
+
+			<!-- /Article -->
+
+			<!-- Sidebar
+			<aside class="col-sm-3 sidebar sidebar-right">
+
+				<div class="widget">
+					<h4>Address</h4>
+					<address>
+						2002 Holcombe Boulevard, Houston, TX 77030, USA
+					</address>
+					<h4>Phone:</h4>
+					<address>
+						(713) 791-1414
+					</address>
+				</div>
+
+			</aside>
+			<!-- /Sidebar -->
+
+	</div>	<!-- /container -->
+
+	<footer id="footer" class="top-space">
+
+		<div class="footer1">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">关于我们</h3>
+						<div class="widget-body">
+							<p>某个电话<br>
+								某个地址<br>
+								<a href="mailto:#">某个邮箱</a><br>
+								<a href="http://www.cnblogs.com/ustcsoftdev/">开发博客</a><br>
+								<br>
+							</p>
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<h3 class="widget-title">介绍</h3>
+						<div class="widget-body">
+							<p>介绍介绍介绍</p>
+						</div>
+					</div>
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+	</footer>
+
+
+
+
+
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/headroom.min.js"></script>
+	<script src="assets/js/jQuery.headroom.min.js"></script>
+	<script src="assets/js/template.js"></script>
+	<script src="assets/js/operate_SendMessage.js"></script>
+	<!--<script src="assets/js/operate_upload.js"></script> -->
+	<script>
+        var oDate = new Date();
+        var year =  oDate.getFullYear();  // 年
+        var month =  oDate.getMonth();  // 月( 0-11 )
+        var date =  oDate.getDate();  // 日
+
+
+		var filldate= '<input type="date" id="sdate"/>';
+		var disabledate='<input type="date" disabled id="sdate"/>';
+		//alert(filldate);
+        document.getElementById("selectdate").innerHTML=filldate;
+        //document.getElementById("selectdate").innerHTML=disabledate;
+		//var checked=0;
+		function check(){
+            var checkbox = document.getElementById('is_deadline');//
+            if(checkbox.checked){
+                document.getElementById("selectdate").innerHTML=disabledate;
+            }else{
+                document.getElementById("selectdate").innerHTML=filldate;
+            }
+
+		}
+	</script>
+
+</body>
+</html>

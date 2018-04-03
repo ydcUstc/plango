@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form method="post" id="myForm">
+    <input type="file" name="file" id="upfile" />
+    <input type="submit" name="submit" value="提交" />
+</form>
+<div id="upStatus"></div>
+</body>
+<script type="text/javascript">
+    var myForm = document.getElementById("myForm");
+    var upfile = document.getElementById("upfile");
+
+    myForm.onsubmit = function() {
+        //我们创建一个FormData对象
+        var fd = new FormData();
+        var file = upfile.files[0];
+        //把文件添加到FormData对象中
+        fd.append("file", file);
+
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4) {
+                alert(this.responseText);
+            }
+        };
+        xhr.open("post", "assets/php/upfile.php", true);
+
+        //监听上传事件
+        xhr.upload.onprogress = function(ev) {
+            //如果长度是可计算的
+            if(ev.lengthComputable) {
+                var percent = Math.round((ev.loaded / ev.total) * 100);
+                document.getElementById("upStatus").innerHTML = percent + "%";
+            }
+        };
+
+        //发送FormData对象
+        xhr.send(fd);
+        return false;
+    };
+</script>
+</html>
